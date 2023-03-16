@@ -39,7 +39,7 @@ class Login {
                 align-items: flex-start;
                 padding: 20px;
                 flex-direction: column;
-                width: 25%;
+                width: 30%;
                 background-color: #eee;
                 border-radius: 5px;
             }
@@ -92,7 +92,23 @@ class Login {
                 margin-top: 5px;
                 color: #000;
                 text-decoration: none;
-            }`;
+            }
+            @media screen and (max-width: 767px){
+              .elementosLogin {
+                  width: 50%;
+              }
+              footer {
+                  font-size: .6rem;
+              }
+          }
+          @media screen and (min-width: 768px) and (max-width: 1023px) {
+              .elementosLogin {
+                  width: 50%;
+              }
+              footer {
+                  font-size: .9rem;
+              }
+          }`;
       const styleEstilo = document.createElement("style");
       styleEstilo.setAttribute("id", "id_estiloLogin");
       styleEstilo.innerHTML = this.estilocss;
