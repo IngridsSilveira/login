@@ -9,10 +9,13 @@ class Login {
   static endpoint = "https://loginv1.cfbcursos.repl.co/";
 
   static login = (ok, naoOk) => {
-    this.ok = () => {ok()};
-    this.naoOk = () => {naoOk()};
-    this.createElementosCSS = () => {
-      this.estilocss = `
+    this.ok = () => {
+      ok();
+    };
+    this.naoOk = () => {
+      naoOk();
+    };
+    this.estilocss = `
             .fundoLogin {
                 display: flex;
                 justify-content: center;
@@ -109,81 +112,79 @@ class Login {
                   font-size: .9rem;
               }
           }`;
-      const styleEstilo = document.createElement("style");
-      styleEstilo.setAttribute("id", "id_estiloLogin");
-      styleEstilo.innerHTML = this.estilocss;
-      document.head.appendChild(styleEstilo);
-    };
-    this.createElementosHTML = () => {
-      const fundoLogin = document.createElement("div");
-      fundoLogin.setAttribute("id", "fundoLogin");
-      fundoLogin.setAttribute("class", "fundoLogin");
+          
+    const styleEstilo = document.createElement("style");
+    styleEstilo.setAttribute("id", "id_estiloLogin");
+    styleEstilo.innerHTML = this.estilocss;
+    document.head.appendChild(styleEstilo);
+    const fundoLogin = document.createElement("div");
+    fundoLogin.setAttribute("id", "fundoLogin");
+    fundoLogin.setAttribute("class", "fundoLogin");
 
-      const baseLogin = document.createElement("div");
-      baseLogin.setAttribute("id", "baseLogin");
-      baseLogin.setAttribute("class", "baseLogin");
+    const baseLogin = document.createElement("div");
+    baseLogin.setAttribute("id", "baseLogin");
+    baseLogin.setAttribute("class", "baseLogin");
 
-      const elementosLogin = document.createElement("div");
-      elementosLogin.setAttribute("id", "elementosLogin");
-      elementosLogin.setAttribute("class", "elementosLogin");
+    const elementosLogin = document.createElement("div");
+    elementosLogin.setAttribute("id", "elementosLogin");
+    elementosLogin.setAttribute("class", "elementosLogin");
 
-      const logoLogin = document.createElement("div");
-      logoLogin.setAttribute("id", "logoLogin");
-      logoLogin.setAttribute("class", "logoLogin");
+    const logoLogin = document.createElement("div");
+    logoLogin.setAttribute("id", "logoLogin");
+    logoLogin.setAttribute("class", "logoLogin");
 
-      const img = document.createElement("img");
-      img.src = "assets/img/user.png";
+    const img = document.createElement("img");
+    img.src = "assets/img/user.png";
 
-      const campoLogin = document.createElement("div");
-      campoLogin.setAttribute("class", "campoLogin");
-      const labelUsername = document.createElement("label");
-      labelUsername.innerHTML = "Username:";
-      const inputUsername = document.createElement("input");
-      inputUsername.setAttribute("type", "text");
-      inputUsername.setAttribute("id", "f_username");
+    const campoLogin = document.createElement("div");
+    campoLogin.setAttribute("class", "campoLogin");
+    const labelUsername = document.createElement("label");
+    labelUsername.innerHTML = "Username:";
+    const inputUsername = document.createElement("input");
+    inputUsername.setAttribute("type", "text");
+    inputUsername.setAttribute("id", "f_username");
 
-      const labelPassowrd = document.createElement("label");
-      labelPassowrd.innerHTML = "Senha:";
-      const inputPassword = document.createElement("input");
-      inputPassword.setAttribute("type", "password");
-      inputPassword.setAttribute("id", "f_senha");
+    const labelPassowrd = document.createElement("label");
+    labelPassowrd.innerHTML = "Senha:";
+    const inputPassword = document.createElement("input");
+    inputPassword.setAttribute("type", "password");
+    inputPassword.setAttribute("id", "f_senha");
 
-      const botoesLogin = document.createElement("div");
-      botoesLogin.setAttribute("class", "botoesLogin");
+    const botoesLogin = document.createElement("div");
+    botoesLogin.setAttribute("class", "botoesLogin");
 
-      const btn_login = document.createElement("button");
-      btn_login.setAttribute("id", "btn_login");
-      btn_login.innerHTML = "Login";
-      btn_login.addEventListener("click", (evt) => {
-        this.verificaLogin();
-      });
+    const btn_login = document.createElement("button");
+    btn_login.setAttribute("id", "btn_login");
+    btn_login.innerHTML = "Login";
+    btn_login.addEventListener("click", (evt) => {
+      this.verificaLogin();
+    });
 
-      const btn_cancelar = document.createElement("button");
-      btn_cancelar.setAttribute("id", "btn_cancelar");
-      btn_cancelar.innerHTML = "Cancelar";
-      btn_cancelar.addEventListener("click", (evt) => {
-        this.fechar();
-      });
+    const btn_cancelar = document.createElement("button");
+    btn_cancelar.setAttribute("id", "btn_cancelar");
+    btn_cancelar.innerHTML = "Cancelar";
+    btn_cancelar.addEventListener("click", (evt) => {
+      this.fechar();
+    });
 
-      const footer = document.createElement("footer");
-      const a = document.createElement("a");
-      a.innerHTML = "Desenvolvido por Ingrid de Souza";
-      a.setAttribute("href", "https://ingriddev.netlify.app/");
+    const footer = document.createElement("footer");
+    const a = document.createElement("a");
+    a.innerHTML = "Desenvolvido por Ingrid de Souza";
+    a.setAttribute("href", "https://ingriddev.netlify.app/");
 
-      logoLogin.appendChild(img);
-      elementosLogin.append(logoLogin, campoLogin, botoesLogin, footer);
-      campoLogin.append(
-        labelUsername,
-        inputUsername,
-        labelPassowrd,
-        inputPassword
-      );
-      footer.appendChild(a);
-      botoesLogin.append(btn_login, btn_cancelar);
-      baseLogin.appendChild(elementosLogin);
-      fundoLogin.appendChild(baseLogin);
-      document.body.appendChild(fundoLogin);
-    };
+    logoLogin.appendChild(img);
+    elementosLogin.append(logoLogin, campoLogin, botoesLogin, footer);
+    campoLogin.append(
+      labelUsername,
+      inputUsername,
+      labelPassowrd,
+      inputPassword
+    );
+    footer.appendChild(a);
+    botoesLogin.append(btn_login, btn_cancelar);
+    baseLogin.appendChild(elementosLogin);
+    fundoLogin.appendChild(baseLogin);
+    document.body.appendChild(fundoLogin);
   };
   static verificaLogin = () => {
     const mat = document.querySelector("#f_username").value;
@@ -217,4 +218,4 @@ class Login {
     id_estiloLogin.remove();
   };
 }
-export { Login };
+// export { Login };

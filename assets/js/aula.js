@@ -1,5 +1,5 @@
 import { Login } from "./login.js";
-import { Cxmsg } from "../../../caixaMsg/caixa.js";
+// import { Cxmsg } from "../../../caixaMsg/caixa.js";
 
 const ok = () => {}
 
@@ -13,7 +13,4 @@ const naoOk = () => {
     Cxmsg.mostrar(config, 'Login', 'Login não efetuado')
 }
 
-
 Login.login(ok, naoOk);
-Login.createElementosCSS()
-Login.createElementosHTML()
