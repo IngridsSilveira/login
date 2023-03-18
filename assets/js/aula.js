@@ -10,7 +10,11 @@ const naoOk = () => {
         textos: null,
         comando: null,
     }
-    Cxmsg.mostrar(config, 'Login', 'Login não efetuado')
+    Cxmsg.mostrar(config, 'Login', 'Login não efetuado, usuário ou senha incorretos.')
 }
 
-Login.login(ok, naoOk);
+const configEnd = {
+    endpoint: "https://loginv1.cfbcursos.repl.co"
+}
+
+Login.login(ok, naoOk, configEnd);
